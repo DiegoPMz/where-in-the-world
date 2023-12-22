@@ -1,0 +1,142 @@
+.cards {
+  padding-top: 6.5rem;
+}
+
+.cards__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+/* FORM */
+.cards__form {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  padding-bottom: 4rem;
+}
+
+.cards__form-input {
+  width: 90%;
+  margin-inline: auto;
+  padding: 0 2rem;
+
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1rem;
+
+  border-radius: 4px;
+  background-color: var(--el-color);
+  box-shadow: 0 0 4.5px 0 var(--input-color);
+}
+
+.form-input__btn {
+  cursor: pointer;
+  transition: 0.2s scale ease-out;
+}
+.form-input__btn:hover {
+  scale: 1.05;
+}
+.form-input__img {
+  width: 1.25rem;
+  height: 1.25rem;
+  color: var(--txt-color);
+}
+
+.form-input__input,
+.form-input__input::placeholder {
+  color: var(--txt-color);
+  font-size: 1em;
+  font-weight: 300;
+}
+
+.form-input__input {
+  width: 100%;
+  padding: 0.5rem 0;
+  font-size: 0.875em;
+}
+.form-input__input:focus-visible {
+  border: none;
+  outline: none;
+}
+
+.cards__form-select {
+  width: 90%;
+  margin-inline: auto;
+}
+.form-select__subContainer {
+  width: fit-content;
+  position: relative;
+  background-color: var(--el-color);
+  box-shadow: 0 0 4.5px 0 var(--input-color);
+}
+
+.form-select__select {
+  min-width: 13.0625rem;
+  padding: 0.8rem 0;
+  padding-left: 1rem;
+  padding-right: 6rem;
+
+  border-radius: 4px;
+
+  color: var(--txt-color);
+  font-size: 0.875em;
+  font-weight: 300;
+}
+.form-select__img {
+  width: 15px;
+  height: 15px;
+
+  color: var(--txt-color);
+
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0.625rem;
+  margin: auto;
+}
+
+.form-select__option {
+  background-color: var(--el-color);
+  color: var(--txt-color);
+}
+
+/* MEDIA */
+@media screen and (min-width: 600px) {
+  .cards__form {
+    width: 100%;
+  }
+  .cards__form-input {
+    max-width: 440px;
+    padding: 0;
+    padding-left: 1rem;
+    margin-inline: inherit;
+  }
+
+  .cards__form-select {
+    margin-inline: inherit;
+  }
+
+  .cards {
+    width: 90%;
+    margin-inline: auto;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .cards {
+    max-width: 1220px;
+  }
+
+  .cards__form {
+    flex-direction: row;
+  }
+
+  .cards__form-select {
+    display: flex;
+    justify-content: flex-end;
+  }
+}

@@ -1,0 +1,37 @@
+* {
+  transition: 0.2s background-color ease-out;
+}
+
+body {
+  background-color: var(--bg-color-main);
+}
+
+button {
+  cursor: pointer;
+}
+
+#body--dark {
+  --bg-color-main: hsl(207, 26%, 17%);
+
+  --el-color: hsl(209, 23%, 22%);
+  --txt-color: hsl(0, 0%, 100%);
+  /* --input-color: hsl(209, 23%, 22%); */
+  --input-color: hsl(210, 24%, 10%);
+
+  /* pagination */
+  --pag-bg: hsl(212, 31%, 11%);
+  --pag-color: hsl(0, 0%, 84%);
+  --pag-bor: hsl(212, 7%, 56%);
+}
+
+#body--light {
+  --bg-color-main: hsl(0, 0%, 98%);
+  --el-color: hsl(0, 0%, 100%);
+  --txt-color: hsl(200, 15%, 8%);
+  --input-color: hsl(0, 0%, 52%);
+
+  /* pagination */
+  --pag-bg: hsl(0, 0%, 84%);
+  --pag-color: hsl(200, 15%, 8%);
+  --pag-bor: hsl(212, 27%, 19%);
+}

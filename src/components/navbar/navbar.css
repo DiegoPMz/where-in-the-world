@@ -1,0 +1,42 @@
+.header {
+  background-color: var(--el-color);
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.8rem 1rem;
+
+  box-shadow: 0 3px 13.5px -4.5px var(--el-color);
+  box-shadow: 0 0 8px -5px var(--input-color);
+
+  position: fixed;
+  z-index: 200;
+  width: 100%;
+}
+.header__link {
+  color: var(--txt-color);
+  font-weight: 600;
+}
+
+.header__scheme-btn {
+  cursor: pointer;
+}
+
+.header__scheme-name {
+  color: var(--txt-color);
+  font-weight: 300;
+  font-size: 0.875em;
+}
+
+@media screen and (min-width: 768px) {
+  .header {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .header {
+    padding-left: 5rem;
+    padding-right: 5rem;
+  }
+}

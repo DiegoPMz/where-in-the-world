@@ -1,0 +1,19 @@
+.theme-toggle__classic {
+  width: 1.5rem;
+  height: 1.5rem;
+  color: var(--txt-color);
+}
+
+.container-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.3rem;
+  cursor: pointer;
+}
+
+.toggle__name {
+  color: var(--txt-color);
+  font-size: 14px;
+  font-weight: 300;
+}

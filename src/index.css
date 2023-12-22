@@ -1,0 +1,188 @@
+@charset "UTF-8";
+/*
+
+  Con este reset vamos a resolver:
+    👉 Unificar el uso de Custom Properties
+    👉 Problemas de box-model más generales
+    👉 Problemas con imagenes, vídeos e iconos svg
+    👉 Problemas con tipografías y etiquetas input en formularios
+    👉 Unificar la tipografía de todas las etiquetas de una web
+
+*/
+/* Aquí definimos las Custom properties */
+
+@font-face {
+  font-family: NunitoSans;
+  src: url(/fonts/NunitoSans-VariableFont.woff2);
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  /*DARK MODE  */
+  --bg-color-main-D: hsl(207, 26%, 17%);
+  --el-color-D: hsl(209, 23%, 22%);
+  --txt-color-D: hsl(0, 0%, 100%);
+  --input-color-D: hsl(210, 24%, 10%);
+
+  /*LIGTH MODE  */
+  /* --bg-color-main-L: hsl(0, 0%, 98%);
+  --el-color-L: hsl(0, 0%, 100%);
+  --txt-color-L: hsl(200, 15%, 8%);
+  --input-color-L: hsl(0, 0%, 52%); */
+
+  /* Tipografía */
+  --font-main: NunitoSans;
+
+  /* PAGINATION */
+  --pag-bg: hsl(212, 31%, 11%);
+  --pag-color: hsl(0, 0%, 84%);
+  --pag-bor: hsl(212, 7%, 56%);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-color-main: hsl(207, 26%, 17%);
+    --el-color: hsl(209, 23%, 22%);
+    --txt-color: hsl(0, 0%, 100%);
+    --input-color: hsl(210, 24%, 10%);
+
+    --pag-bg: hsl(212, 31%, 11%);
+    --pag-color: hsl(0, 0%, 84%);
+    --pag-bor: hsl(212, 7%, 56%);
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg-color-main: hsl(0, 0%, 98%);
+    --el-color: hsl(0, 0%, 100%);
+    --txt-color: hsl(200, 15%, 8%);
+    --input-color: hsl(0, 0%, 52%);
+
+    --pag-bg: hsl(0, 0%, 84%);
+    --pag-color: hsl(200, 15%, 8%);
+    --pag-bor: hsl(212, 27%, 19%);
+  }
+}
+
+/* Reseteamos los margin y paddings de todas las etiquetas */
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  vertical-align: baseline;
+}
+
+/* Evitamos problemas con las imagenes */
+img,
+picture,
+video,
+iframe,
+figure {
+  max-width: 100%;
+  width: 100%;
+  display: block;
+  /* opcional */
+  -o-object-fit: cover;
+  object-fit: cover;
+  /* opcional */
+  -o-object-position: center center;
+  object-position: center center;
+}
+
+/* Reseteamos los enlaces para funcionar como cajas... */
+a {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  font-size: inherit;
+}
+
+/* ... excepto los que se encuentran en párrafos */
+p a {
+  display: inline;
+}
+
+/* Quitamos los puntos de los <li> */
+li {
+  list-style-type: none;
+}
+
+/* Desactivamos estilos por defecto de las principales etiquetas de texto */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span,
+a,
+strong,
+blockquote,
+i,
+b,
+u,
+em {
+  font-size: 1em;
+  font-weight: inherit;
+  font-style: inherit;
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Evitamos problemas con los pseudoelementos de quotes */
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+
+/* Nivelamos problemas de tipografías y colocación de formularios */
+form,
+input,
+textarea,
+select,
+button,
+label {
+  font-family: inherit;
+  font-size: inherit;
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
+  hyphens: auto;
+  background-color: transparent;
+  color: inherit;
+  display: block;
+  /* opcional */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+/* Reseteamos las tablas */
+table,
+tr,
+td {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* Evitamos problemas con los SVG */
+svg {
+  width: 100%;
+  display: block;
+  fill: currentColor;
+}
+
+/* Configuramos la tipografía para toda la web */
+body {
+  min-height: 100vh;
+  min-height: 100dvh;
+  font-size: 100%;
+  font-family: var(--font-main);
+}

@@ -1,0 +1,36 @@
+.pagination {
+  width: fit-content;
+  margin-inline: auto;
+
+  padding-top: 3rem;
+  padding-bottom: 1rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.4rem;
+
+  font-family: var(--font-main);
+  color: var(--pag-color);
+}
+
+.pagination__btn {
+  min-width: 1.5rem;
+  border-radius: 2px;
+  background-color: var(--pag-bg);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pagination__pages {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.page--active {
+  box-shadow: 0 0 0 1.5px var(--pag-bor);
+  border-radius: 2px;
+}
