@@ -8,6 +8,10 @@
   margin-inline: auto;
   box-shadow: 0 0 18px 1px var(--input-color);
 
+  box-shadow:
+    rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    var(--input-color) 0px 1px 3px -1px;
+
   transition: 0.3s scale ease-in-out;
 }
 
@@ -21,9 +25,10 @@
 }
 
 .card__content {
+  padding: 0 1rem;
   padding-top: 1.5rem;
   padding-bottom: 2.5rem;
-  padding-left: 1rem;
+  /* padding-left: 1rem; */
 }
 .card__content-title {
   display: block;

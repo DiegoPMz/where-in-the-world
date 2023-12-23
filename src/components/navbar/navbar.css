@@ -6,8 +6,9 @@
   align-items: center;
   padding: 1.8rem 1rem;
 
-  box-shadow: 0 3px 13.5px -4.5px var(--el-color);
-  box-shadow: 0 0 8px -5px var(--input-color);
+  box-shadow:
+    rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    var(--input-color) 0px 1px 3px -1px;
 
   position: fixed;
   z-index: 200;
