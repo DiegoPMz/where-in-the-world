@@ -17,7 +17,7 @@ export const useLocationContent = (
   const [paramsURL, setParamsURL] = useState(null)
 
   const location = useLocation()
-  const [searchParams, setSearchParams] = useSearchParams({ country: '' })
+  const [searchParams] = useSearchParams({ country: '' })
   const getSearchCountry = searchParams.get('country')
   const { page, regionValue, regionPage } = useParams()
 

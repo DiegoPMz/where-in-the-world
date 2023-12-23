@@ -2,7 +2,7 @@ import { useContext } from 'react'
 import DetailCountryContext from '../../../context/DetailCountryContext'
 import { Card } from '../card/Card'
 
-export const CardContainer = ({ apiData, numberPages }) => {
+export const CardContainer = ({ numberPages }) => {
   const { data } = numberPages
   const { setCountryDetail } = useContext(DetailCountryContext)
 
@@ -13,7 +13,7 @@ export const CardContainer = ({ apiData, numberPages }) => {
   return (
     <section className='cards__container'>
       {data &&
-        data.map(el => (
+        data.map((el) => (
           <Card
             key={el.name.common}
             flag={el.flags.svg}
@@ -21,7 +21,7 @@ export const CardContainer = ({ apiData, numberPages }) => {
             population={el.population}
             region={el.region}
             capital={el.capital}
-            onClick={e => sendCountryDetails(e, el)}
+            onClick={(e) => sendCountryDetails(e, el)}
           />
         ))}
     </section>

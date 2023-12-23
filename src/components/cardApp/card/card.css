@@ -1,12 +1,18 @@
 .card {
-  width: 240px;
+  width: 15rem;
   background-color: var(--el-color);
 
   color: var(--txt-color);
   border-radius: 6px;
 
   margin-inline: auto;
-  box-shadow: 0 0 8px 1px var(--input-color);
+  box-shadow: 0 0 18px 1px var(--input-color);
+
+  transition: 0.3s scale ease-in-out;
+}
+
+.card:hover {
+  scale: 1.05;
 }
 
 .card__image {

@@ -1,5 +1,6 @@
-import { Link } from 'react-router-dom'
 import './card.css'
+
+import { Link } from 'react-router-dom'
 
 export const Card = ({ flag, name, population, region, capital, onClick }) => {
   return (

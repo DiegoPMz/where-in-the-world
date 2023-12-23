@@ -1,6 +1,6 @@
 import './App.css'
 
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { HashRouter, Route, Routes } from 'react-router-dom'
 import { CardApp } from './components/cardApp/CardApp'
 import { Navbar } from './components/navbar/Navbar'
 import { DetailCountryProvider } from './context/DetailCountryContext'
@@ -8,7 +8,7 @@ import { CountryInfo } from './pages/CountryInfo/CountryInfo'
 
 function App() {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Navbar />
 
       <DetailCountryProvider>
@@ -44,7 +44,7 @@ function App() {
           />
         </Routes>
       </DetailCountryProvider>
-    </BrowserRouter>
+    </HashRouter>
   )
 }
 

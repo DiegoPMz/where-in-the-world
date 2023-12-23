@@ -1,6 +1,7 @@
 import {
   getAllCountries,
   getCodeCountrie,
+  getDetailCountrie,
   getRegionCountries,
   getSearchCountrie,
 } from './servicesApi'
@@ -26,6 +27,11 @@ export const requestApi = ({ typeApi, valueApi, setApiData }) => {
 
     code: () => {
       const { apiData } = getCodeCountrie(valueApi, apiController)
+      apiData.then(res => setApiData(res))
+    },
+
+    detail: () => {
+      const { apiData } = getDetailCountrie(valueApi, apiController)
       apiData.then(res => setApiData(res))
     },
   }
