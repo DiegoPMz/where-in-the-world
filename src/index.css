@@ -25,11 +25,17 @@
   --txt-color-D: hsl(0, 0%, 100%);
   --input-color-D: hsl(210, 24%, 10%);
 
+  --card-skeleton-bg: #111828;
+  --card-skeleton-bg-c: #364051;
+
   /*LIGTH MODE  */
   /* --bg-color-main-L: hsl(0, 0%, 98%);
   --el-color-L: hsl(0, 0%, 100%);
   --txt-color-L: hsl(200, 15%, 8%);
   --input-color-L: hsl(0, 0%, 52%); */
+
+  /* --card-skeleton-bg: #444549; */
+  /* --card-skeleton-bg-c: #c2c6cf; */
 
   /* Tipografía */
   --font-main: NunitoSans;
@@ -50,6 +56,9 @@
     --pag-bg: hsl(212, 31%, 11%);
     --pag-color: hsl(0, 0%, 84%);
     --pag-bor: hsl(212, 7%, 56%);
+
+    --card-skeleton-bg: #111828;
+    --card-skeleton-bg-c: #364051;
   }
 }
 
@@ -63,6 +72,9 @@
     --pag-bg: hsl(0, 0%, 84%);
     --pag-color: hsl(200, 15%, 8%);
     --pag-bor: hsl(212, 27%, 19%);
+
+    --card-skeleton-bg: #444549;
+    --card-skeleton-bg-c: #c2c6cf;
   }
 }
 
