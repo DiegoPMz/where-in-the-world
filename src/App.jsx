@@ -14,12 +14,12 @@ function App() {
       <DetailCountryProvider>
         <Routes>
           <Route
-            path='/*'
-            element={<CardApp />}
+            path='/info/:infoCountry'
+            element={<CountryInfo />}
           />
 
           <Route
-            path='/page/:page'
+            path='/region/:regionValue/page/:regionPage'
             element={<CardApp />}
           />
 
@@ -29,7 +29,7 @@ function App() {
           />
 
           <Route
-            path='/region/:regionValue/page/:regionPage'
+            path='/page/:page'
             element={<CardApp />}
           />
 
@@ -39,8 +39,8 @@ function App() {
           />
 
           <Route
-            path='/info/:infoCountry'
-            element={<CountryInfo />}
+            path='/*'
+            element={<CardApp />}
           />
         </Routes>
       </DetailCountryProvider>
