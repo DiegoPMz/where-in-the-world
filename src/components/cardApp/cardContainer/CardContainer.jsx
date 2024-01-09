@@ -1,20 +1,11 @@
-import { useContext } from 'react'
-import DetailCountryContext from '../../../context/DetailCountryContext'
 import { SkeletonLoader } from '../../skeletonLoader/SkeletonLoader'
 import { Card } from '../card/Card'
 
-export const CardContainer = ({ numberPages }) => {
-  const { data } = numberPages
-  const { setCountryDetail } = useContext(DetailCountryContext)
-
-  const sendCountryDetails = (e, value) => {
-    setCountryDetail(value)
-  }
-
+export const CardContainer = ({ segmentedData }) => {
   return (
     <section className='cards__container'>
-      {data
-        ? data.map(el => (
+      {segmentedData
+        ? segmentedData.map(el => (
             <Card
               key={el.name.common}
               flag={el.flags.svg}
@@ -22,7 +13,7 @@ export const CardContainer = ({ numberPages }) => {
               population={el.population}
               region={el.region}
               capital={el.capital}
-              onClick={e => sendCountryDetails(e, el)}
+              // onClick={e => sendCountryDetails(e, el)}
             />
           ))
         : Array(12)

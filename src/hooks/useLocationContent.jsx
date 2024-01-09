@@ -11,7 +11,6 @@ export const useLocationContent = (
   apiData,
   countrySearch,
   setCountrySearch,
-  defaultCountrySearch,
 ) => {
   const [numberPages, setNumberPages] = useState(numberPagesDefault)
   const [paramsURL, setParamsURL] = useState(null)
@@ -48,7 +47,7 @@ export const useLocationContent = (
     if (!apiData) return
 
     if (location.pathname === '/' || page) {
-      setCountrySearch(defaultCountrySearch)
+      setCountrySearch('')
       setParamsURL(page)
       itemsPages(apiData, page)
     }

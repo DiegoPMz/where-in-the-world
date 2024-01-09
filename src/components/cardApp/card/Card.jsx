@@ -7,7 +7,7 @@ export const Card = ({ flag, name, population, region, capital, onClick }) => {
     <Link
       to={`/info/${name}`}
       className='card'
-      onClick={onClick}
+      // onClick={onClick}
     >
       <article className='card__main'>
         <img

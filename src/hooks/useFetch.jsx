@@ -1,26 +1,34 @@
 import { useEffect, useState } from 'react'
+import { useLocation } from 'react-router-dom'
 import { requestApi } from '../helpers/apiRequest/requestApi'
 
-export const useFetch = (countrySearch, setCountrySearch, getSearchCountry) => {
+export const useFetch = (stateApp, setStateApp, searchCountryParam) => {
   const [apiData, setApiData] = useState(null)
+  const location = useLocation()
 
   useEffect(() => {
-    if (getSearchCountry) {
-      setCountrySearch({ ...countrySearch, search: getSearchCountry })
-    }
+    if (searchCountryParam)
+      setStateApp({ ...stateApp, search: searchCountryParam })
 
     let typeApi = ''
     let valueApi = ''
 
-    if (!countrySearch.region && !countrySearch.search) {
+    if (location.pathname === '/') {
+      console.log('home')
       typeApi = 'default'
       valueApi = null
-    } else if (countrySearch.region) {
+    }
+
+    if (stateApp.region) {
+      console.log('region')
       typeApi = 'region'
-      valueApi = countrySearch.region
-    } else if (countrySearch.search) {
+      valueApi = stateApp.region
+    }
+
+    if (stateApp.search) {
+      console.log('search')
       typeApi = 'search'
-      valueApi = countrySearch.search
+      valueApi = stateApp.search
     }
 
     const { cancel } = requestApi({
@@ -29,8 +37,13 @@ export const useFetch = (countrySearch, setCountrySearch, getSearchCountry) => {
       setApiData,
     })
 
-    return () => cancel()
-  }, [countrySearch.region, countrySearch.search])
+    return () => {
+      // cancel()
+
+      typeApi = ''
+      valueApi = ''
+    }
+  }, [location.pathname])
 
   return { apiData }
 }

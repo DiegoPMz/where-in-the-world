@@ -4,7 +4,7 @@ export const getAllCountries = controller => {
 
     const response = fetch('https://restcountries.com/v3.1/all', options).then(
       res => {
-        if (!res.ok) throw new Error('HTTP error ' + response.status)
+        if (!res.ok) throw new Error('HTTP error ' + res.status)
         return res.json()
       },
     )
@@ -24,7 +24,7 @@ export const getRegionCountries = (valueApi, controller) => {
       `https://restcountries.com/v3.1/region/${valueApi}`,
       options,
     ).then(res => {
-      if (!res.ok) throw new Error('HTTP error ' + response.status)
+      if (!res.ok) throw new Error('HTTP error ' + res.status)
 
       return res.json()
     })
@@ -42,7 +42,11 @@ export const getSearchCountrie = (valueApi, controller) => {
       `https://restcountries.com/v3.1/translation/${valueApi}`,
       options,
     ).then(res => {
-      if (!res.ok) throw new Error('HTTP error ' + response.status)
+      console.log(res)
+
+      if (!res.ok) {
+        throw new Error('HTTP error ' + res.status)
+      }
 
       return res.json()
     })
@@ -59,7 +63,7 @@ export const getCodeCountrie = (valueApi, controller) => {
       `https://restcountries.com/v3.1/alpha?codes=${valueApi}`,
       options,
     ).then(res => {
-      if (!res.ok) throw new Error('HTTP error ' + response.status)
+      if (!res.ok) throw new Error('HTTP error ' + res.status)
 
       return res.json()
     })
@@ -77,7 +81,7 @@ export const getDetailCountrie = (valueApi, controller) => {
       `https://restcountries.com/v3.1/name/${valueApi}?fullText=true`,
       options,
     ).then(res => {
-      if (!res.ok) throw new Error('HTTP error ' + response.status)
+      if (!res.ok) throw new Error('HTTP error ' + res.status)
 
       return res.json()
     })

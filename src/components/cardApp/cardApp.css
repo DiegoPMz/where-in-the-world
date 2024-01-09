@@ -110,6 +110,13 @@
   color: var(--txt-color);
 }
 
+.cards__error-message {
+  display: block;
+  padding: 0 20px;
+
+  color: hsl(0, 81%, 60%);
+}
+
 /* MEDIA */
 @media screen and (min-width: 600px) {
   .cards__form {

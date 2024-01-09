@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { useLocation, useParams } from 'react-router-dom'
 
 const defaulValues = {
   search: '',
@@ -10,6 +10,7 @@ export const CardForm = ({ handleSubmit, handleSelect }) => {
   const [cardInputs, setCardInputs] = useState(defaulValues)
   const [isOpen, setIsOpen] = useState(false)
   const { regionValue } = useParams()
+  const location = useLocation()
 
   const handleFocus = () => setIsOpen(true)
   const handleBlur = () => setIsOpen(false)
@@ -30,9 +31,7 @@ export const CardForm = ({ handleSubmit, handleSelect }) => {
   }, [regionValue])
 
   useEffect(() => {
-    if (location.pathname === '/') {
-      setCardInputs(defaulValues)
-    }
+    if (location.pathname === '/') setCardInputs(defaulValues)
   }, [location.pathname])
 
   return (
@@ -82,14 +81,12 @@ export const CardForm = ({ handleSubmit, handleSelect }) => {
             onFocus={handleFocus}
             onBlur={handleBlur}
           >
-            {!isOpen && (
-              <option
-                value=''
-                className='form-select__option'
-              >
-                Filter by Region
-              </option>
-            )}
+            <option
+              value=''
+              className='form-select__option'
+            >
+              Filter by Region
+            </option>
 
             <option
               className='form-select__option'

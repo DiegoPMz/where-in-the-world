@@ -15,13 +15,19 @@
 }
 
 .pagination__btn {
-  min-width: 1.5rem;
-  border-radius: 2px;
-  background-color: var(--pag-bg);
+  min-width: 30px;
+  aspect-ratio: 1/1;
+
+  border-radius: 50%;
+  font-size: 0.875em;
 
   display: flex;
   align-items: center;
   justify-content: center;
+}
+.pagination__btn:hover {
+  background-color: var(--pag-bg);
+  opacity: 0.5;
 }
 
 .pagination__pages {
@@ -31,6 +37,10 @@
 }
 
 .page--active {
-  box-shadow: 0 0 0 1.5px var(--pag-bor);
-  border-radius: 2px;
+  background-color: var(--pag-bg);
+}
+
+.pagination__btn--notLink:hover {
+  background-color: unset;
+  opacity: 1;
 }

@@ -2,7 +2,7 @@ import './countryInfo.css'
 
 import { useEffect, useState } from 'react'
 import { Link, useNavigate, useParams } from 'react-router-dom'
-import { requestApi } from '../../helpers/apiRequest/requestApi'
+import { requestApi } from '../../services/api/requestApi'
 
 export const CountryInfo = () => {
   const navigate = useNavigate()
@@ -14,33 +14,43 @@ export const CountryInfo = () => {
   useEffect(() => {
     if (!infoCountry) return
 
-    const { cancel } = requestApi({
-      typeApi: 'detail',
-      valueApi: infoCountry,
-      setApiData: setDetailAPI,
-    })
+    const ENDPOINT_DETAIL = 'detail'
+    let controller = null
 
-    return () => cancel()
+    const { apiController } = requestApi(
+      ENDPOINT_DETAIL,
+      setDetailAPI,
+      infoCountry,
+    )
+    controller = apiController
+
+    return () => {
+      if (controller) controller.abort()
+    }
   }, [infoCountry])
 
   useEffect(() => {
     if (!detailAPI || !detailAPI[0].borders) return
-    const { cancel } = getBorderCountries()
 
-    window.scrollTo(0, 0)
-    return () => cancel()
+    let controller = null
+    controller = getBorderCountries()
+
+    return () => {
+      if (controller) controller.abort()
+    }
   }, [detailAPI])
 
   const getBorderCountries = () => {
     const borderValues = detailAPI[0].borders.toString()
+    const ENDPOINT_CODE = 'code'
 
-    const { cancel } = requestApi({
-      typeApi: 'code',
-      valueApi: borderValues,
-      setApiData: setBorderCountries,
-    })
+    const { apiController } = requestApi(
+      ENDPOINT_CODE,
+      setBorderCountries,
+      borderValues,
+    )
 
-    return { cancel }
+    return apiController
   }
 
   const handleBack = () => navigate(-1)

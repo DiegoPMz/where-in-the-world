@@ -11,6 +11,7 @@
     var(--input-color) 0px 1px 3px -1px;
 
   position: fixed;
+  top: 0;
   z-index: 200;
   width: 100%;
 }

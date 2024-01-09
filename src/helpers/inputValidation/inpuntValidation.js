@@ -5,7 +5,7 @@ const errorDefault = {
 
 export const inpuntValidation = stateInput => {
   let errorValidation = { ...errorDefault }
-  var regexNumber = /\d/
+  const regexNumber = /\d/
 
   if (regexNumber.test(stateInput)) {
     return (errorValidation = {
