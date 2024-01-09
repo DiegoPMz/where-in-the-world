@@ -13,7 +13,7 @@ export const CardContainer = ({ segmentedData }) => {
               population={el.population}
               region={el.region}
               capital={el.capital}
-              // onClick={e => sendCountryDetails(e, el)}
+             
             />
           ))
         : Array(12)
