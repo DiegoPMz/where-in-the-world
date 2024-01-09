@@ -36,28 +36,3 @@ function App() {
 }
 
 export default App
-
-//  <Route
-//         path='/region/:regionValue/page/:regionPage'
-//         element={<CardApp />}
-//       />
-
-//       <Route
-//         path='/region/:regionValue'
-//         element={<CardApp />}
-//       />
-
-//       <Route
-//         path='/page/:page'
-//         element={<CardApp />}
-//       />
-
-//       <Route
-//         path='/search/*'
-//         element={<CardApp />}
-//       />
-
-//       <Route
-//         path='/*'
-//         element={<CardApp />}
-//       />
